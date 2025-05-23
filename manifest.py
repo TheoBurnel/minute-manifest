@@ -41,7 +41,7 @@ for canvas in manifest.get("items", []):
             annotation_page["items"].append(annotation)
 
 # Sauvegarder le nouveau manifeste enrichi
-with open("manifest_avec_transcriptions.json", "w", encoding="utf-8") as f:
+with open("manifest.json", "w", encoding="utf-8") as f:
     json.dump(manifest, f, ensure_ascii=False, indent=2)
 
-print("✅ Manifeste enrichi généré : manifest_avec_transcriptions.json")
+print("✅ Manifeste enrichi généré : manifest.json")
