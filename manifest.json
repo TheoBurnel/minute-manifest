@@ -1,0 +1,188 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json",
+  "type": "Manifest",
+  "label": {
+    "fr": [
+      "Minute du registre 11 J 184"
+    ]
+  },
+  "items": [
+    {
+      "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/1",
+      "type": "Canvas",
+      "label": {
+        "fr": [
+          "Page 1"
+        ]
+      },
+      "height": 4000,
+      "width": 3000,
+      "seeAlso": [
+        {
+          "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0023.xml",
+          "type": "Text",
+          "label": {
+            "fr": [
+              "Fichier ALTO"
+            ]
+          },
+          "format": "application/xml"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/1/ap",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/1/ann",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0023.jpg",
+                "type": "Image",
+                "height": 4000,
+                "width": 3000,
+                "format": "image/jpeg"
+              },
+              "target": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/2",
+      "type": "Canvas",
+      "label": {
+        "fr": [
+          "Page 2"
+        ]
+      },
+      "height": 4000,
+      "width": 3000,
+      "seeAlso": [
+        {
+          "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0024.xml",
+          "type": "Text",
+          "label": {
+            "fr": [
+              "Fichier ALTO"
+            ]
+          },
+          "format": "application/xml"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/2/ap",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/2/ann",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0024.jpg",
+                "type": "Image",
+                "height": 4000,
+                "width": 3000,
+                "format": "image/jpeg"
+              },
+              "target": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/3",
+      "type": "Canvas",
+      "label": {
+        "fr": [
+          "Page 3"
+        ]
+      },
+      "height": 4000,
+      "width": 3000,
+      "seeAlso": [
+        {
+          "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0025.xml",
+          "type": "Text",
+          "label": {
+            "fr": [
+              "Fichier ALTO"
+            ]
+          },
+          "format": "application/xml"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/3/ap",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/3/ann",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0025.jpg",
+                "type": "Image",
+                "height": 4000,
+                "width": 3000,
+                "format": "image/jpeg"
+              },
+              "target": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/4",
+      "type": "Canvas",
+      "label": {
+        "fr": [
+          "Page 4"
+        ]
+      },
+      "height": 4000,
+      "width": 3000,
+      "seeAlso": [
+        {
+          "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0026.xml",
+          "type": "Text",
+          "label": {
+            "fr": [
+              "Fichier ALTO"
+            ]
+          },
+          "format": "application/xml"
+        }
+      ],
+      "items": [
+        {
+          "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/4/ap",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/4/ann",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0026.jpg",
+                "type": "Image",
+                "height": 4000,
+                "width": 3000,
+                "format": "image/jpeg"
+              },
+              "target": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
