@@ -1,60 +1,47 @@
-# generate_manifest.py
-from pathlib import Path
-from iiif_prezi3 import Manifest, Canvas, AnnotationPage, Annotation
+import json
+import requests
+from lxml import etree
+from io import BytesIO
 
-# 1. dossier contenant les images, ici le dossier courant
-img_dir = Path(__file__).parent
+# Charger le manifeste IIIF
+url_manifest = "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json"
+manifest = requests.get(url_manifest).json()
 
-# 2. base URL brute de ton dépôt GitHub
-base = "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/"
+# Parcourir les canvas
+for canvas in manifest.get("items", []):
+    see_also = canvas.get("seeAlso", [])
+    annotation_page = canvas["items"][0]
+    
+    for see in see_also:
+        if see["format"] == "application/xml":
+            alto_url = see["id"]
+            alto_response = requests.get(alto_url)
+            tree = etree.parse(BytesIO(alto_response.content))
 
-# 3. toutes les images JPG triées par nom
-images = sorted(p for p in img_dir.glob("*.jpg"))
+            # Extraire le texte ligne à ligne
+            ns = {"alto": "http://www.loc.gov/standards/alto/ns-v4#"}
+            lines = tree.xpath("//alto:String", namespaces=ns)
+            words = [line.attrib.get("CONTENT", "") for line in lines]
+            transcription = " ".join(words)
 
-manifest = Manifest(
-    id=f"{base}manifest.json",
-    label={"fr": ["Minute du registre 11 J 184"]}
-)
+            # Ajouter une annotation de transcription
+            annotation = {
+                "id": canvas["id"] + "/alto-annotation",
+                "type": "Annotation",
+                "motivation": "supplementing",
+                "body": {
+                    "type": "TextualBody",
+                    "value": transcription,
+                    "format": "text/plain",
+                    "language": "fr"
+                },
+                "target": canvas["id"]
+            }
 
-for idx, img_path in enumerate(images, start=1):
-    alto_path = img_path.with_suffix(".xml")
+            annotation_page["items"].append(annotation)
 
-    canvas_id = f"{base}canvas/{idx}"
-    canvas = Canvas(
-        id=canvas_id,
-        width=3000,
-        height=4000,
-        label={"fr": [f"Page {idx}"]}
-    )
+# Sauvegarder le nouveau manifeste enrichi
+with open("manifest_avec_transcriptions.json", "w", encoding="utf-8") as f:
+    json.dump(manifest, f, ensure_ascii=False, indent=2)
 
-    image_url = f"{base}{img_path.name}"
-    annotation = Annotation(
-        id=f"{canvas_id}/ann",
-        motivation="painting",
-        body={
-            "id": image_url,
-            "type": "Image",
-            "format": "image/jpeg",
-            "width": 3000,
-            "height": 4000
-        },
-        target=canvas_id
-    )
-
-    page = AnnotationPage(id=f"{canvas_id}/ap", items=[annotation])
-    canvas.items.append(page)
-
-    if alto_path.exists():
-        canvas.seeAlso = [{
-            "id": f"{base}{alto_path.name}",
-            "type": "Text",
-            "format": "application/xml",
-            "label": {"fr": ["Fichier ALTO"]}
-        }]
-
-    manifest.items.append(canvas)
-
-with open("manifest.json", "w") as f:
-    f.write(manifest.json(indent=2))
-
-print("✅ Manifest généré : manifest.json")
+print("✅ Manifeste enrichi généré : manifest_avec_transcriptions.json")
