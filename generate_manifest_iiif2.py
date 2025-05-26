@@ -3,66 +3,74 @@ import json
 from PIL import Image
 
 # === CONFIGURATION ===
-BASE_URL = "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main"  # URL de base
+BASE_URL = "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main"
 OUTPUT_FILE = "manifest.json"
-IMAGES_FOLDER = "."  # Dossier local contenant les .jpg
+IMAGES_FOLDER = "."  # Dossier local contenant les .jpg et .xml
+LABEL = "Minute du registre 11 J 184"
 
-# === MANIFEST IIIF v2.0 ===
-manifest_url = f"{BASE_URL}/manifest.json"
-
+# === INIT MANIFEST IIIF v2.0 ===
 manifest = {
     "@context": "http://iiif.io/api/presentation/2/context.json",
-    "@id": manifest_url,
+    "@id": f"{BASE_URL}/manifest.json",
     "@type": "sc:Manifest",
-    "label": "Mon Manuscrit",
+    "label": LABEL,
     "sequences": [{
         "@type": "sc:Sequence",
-        "@id": f"{manifest_url}/sequence/normal",
+        "@id": f"{BASE_URL}/manifest.json/sequence/normal",
         "canvases": []
     }]
 }
 
-# === Génération des canvases ===
+# === LISTE DES IMAGES JPG ===
 images = sorted([f for f in os.listdir(IMAGES_FOLDER) if f.lower().endswith(".jpg")])
 
-for idx, filename in enumerate(images):
-    image_path = os.path.join(IMAGES_FOLDER, filename)
-    with Image.open(image_path) as img:
+# === BOUCLE DE CRÉATION DES CANVASES ===
+for idx, img_filename in enumerate(images):
+    base_name = os.path.splitext(img_filename)[0]  # ex: 11_J_184_0023
+    xml_filename = f"{base_name}.xml"
+
+    img_path = os.path.join(IMAGES_FOLDER, img_filename)
+    with Image.open(img_path) as img:
         width, height = img.size
 
-    canvas_id = f"{manifest_url}/canvas/{idx+1}"
-    image_id = f"{manifest_url}/image/{idx+1}"  # Pour l'annotation
-    image_url = f"{BASE_URL}/files/{filename}"  # Image réelle
+    canvas_id = f"{BASE_URL}/canvas/{idx+1}"
+    annotation_id = f"{canvas_id}/ann"
+    img_url = f"{BASE_URL}/{img_filename}"
+    xml_url = f"{BASE_URL}/{xml_filename}"
 
     canvas = {
-        "@type": "sc:Canvas",
         "@id": canvas_id,
+        "@type": "sc:Canvas",
         "label": f"Page {idx+1}",
         "height": height,
         "width": width,
         "images": [{
             "@type": "oa:Annotation",
-            "@id": f"{manifest_url}/annotation/{idx+1}",
             "motivation": "sc:painting",
-            "on": canvas_id,
+            "@id": annotation_id,
             "resource": {
+                "@id": img_url,
                 "@type": "dctypes:Image",
-                "@id": image_url,
                 "format": "image/jpeg",
                 "height": height,
-                "width": width,
-                "service": {
-                    "@context": "http://iiif.io/api/image/2/context.json",
-                    "@id": image_url.rsplit('.', 1)[0],
-                    "profile": "http://iiif.io/api/image/2/level1.json"
-                }
-            }
+                "width": width
+            },
+            "on": canvas_id
         }]
     }
 
+    # Ajout du seeAlso si le fichier XML existe localement
+    if os.path.exists(os.path.join(IMAGES_FOLDER, xml_filename)):
+        canvas["seeAlso"] = [{
+            "@id": xml_url,
+            "format": "application/xml",
+            "label": "OCR text",
+            "profile": "http://www.loc.gov/standards/alto/ns-v4#"
+        }]
+
     manifest["sequences"][0]["canvases"].append(canvas)
 
-# === Écriture du manifeste ===
+# === ÉCRITURE DU FICHIER JSON ===
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(manifest, f, indent=2, ensure_ascii=False)
 
