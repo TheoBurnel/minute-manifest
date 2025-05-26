@@ -2,129 +2,113 @@
   "@context": "http://iiif.io/api/presentation/2/context.json",
   "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json",
   "@type": "sc:Manifest",
-  "label": "Minute du registre 11 J 184",
+  "label": "Mon Manuscrit",
   "sequences": [
     {
       "@type": "sc:Sequence",
-      "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json/sequence/normal",
+      "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/sequence/normal",
       "canvases": [
         {
+          "@type": "sc:Canvas",
           "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/1",
-          "@type": "sc:Canvas",
           "label": "Page 1",
-          "height": 4000,
-          "width": 3000,
-          "seeAlso": [
-            {
-              "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0023.xml",
-              "format": "application/xml",
-              "label": "OCR text",
-              "profile": "http://www.loc.gov/standards/alto/ns-v4#"
-            }
-          ],
+          "height": 9301,
+          "width": 5778,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
-              "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/1/ann",
+              "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/1",
               "resource": {
-                "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0023.jpg",
                 "@type": "dctypes:Image",
+                "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/files/11_J_184_0023.jpg",
                 "format": "image/jpeg",
-                "height": 4000,
-                "width": 3000
-              },
-              "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/1"
+                "height": 9301,
+                "width": 5778,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/files/11_J_184_0023",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              }
             }
           ]
         },
         {
+          "@type": "sc:Canvas",
           "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/2",
-          "@type": "sc:Canvas",
           "label": "Page 2",
-          "height": 4000,
-          "width": 3000,
-          "seeAlso": [
-            {
-              "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0024.xml",
-              "format": "application/xml",
-              "label": "OCR text",
-              "profile": "http://www.loc.gov/standards/alto/ns-v4#"
-            }
-          ],
+          "height": 9397,
+          "width": 6410,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
-              "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/2/ann",
+              "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/2",
               "resource": {
-                "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0024.jpg",
                 "@type": "dctypes:Image",
+                "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/files/11_J_184_0024.jpg",
                 "format": "image/jpeg",
-                "height": 4000,
-                "width": 3000
-              },
-              "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/2"
+                "height": 9397,
+                "width": 6410,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/files/11_J_184_0024",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              }
             }
           ]
         },
         {
+          "@type": "sc:Canvas",
           "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/3",
-          "@type": "sc:Canvas",
           "label": "Page 3",
-          "height": 4000,
-          "width": 3000,
-          "seeAlso": [
-            {
-              "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0025.xml",
-              "format": "application/xml",
-              "label": "OCR text",
-              "profile": "http://www.loc.gov/standards/alto/ns-v4#"
-            }
-          ],
+          "height": 9301,
+          "width": 5778,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
-              "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/3/ann",
+              "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/3",
               "resource": {
-                "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0025.jpg",
                 "@type": "dctypes:Image",
+                "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/files/11_J_184_0025.jpg",
                 "format": "image/jpeg",
-                "height": 4000,
-                "width": 3000
-              },
-              "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/3"
+                "height": 9301,
+                "width": 5778,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/files/11_J_184_0025",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              }
             }
           ]
         },
         {
-          "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/4",
           "@type": "sc:Canvas",
+          "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/4",
           "label": "Page 4",
-          "height": 4000,
-          "width": 3000,
-          "seeAlso": [
-            {
-              "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0026.xml",
-              "format": "application/xml",
-              "label": "OCR text",
-              "profile": "http://www.loc.gov/standards/alto/ns-v4#"
-            }
-          ],
+          "height": 9397,
+          "width": 6423,
           "images": [
             {
               "@type": "oa:Annotation",
               "motivation": "sc:painting",
-              "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/4/ann",
+              "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/4",
               "resource": {
-                "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0026.jpg",
                 "@type": "dctypes:Image",
+                "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/files/11_J_184_0026.jpg",
                 "format": "image/jpeg",
-                "height": 4000,
-                "width": 3000
-              },
-              "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/4"
+                "height": 9397,
+                "width": 6423,
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/files/11_J_184_0026",
+                  "profile": "http://iiif.io/api/image/2/level1.json"
+                }
+              }
             }
           ]
         }

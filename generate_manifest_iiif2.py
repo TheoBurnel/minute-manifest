@@ -4,7 +4,7 @@ from PIL import Image
 
 # === CONFIGURATION ===
 BASE_URL = "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main"  # URL de base pour les images (à adapter)
-OUTPUT_FILE = "manifest2.json"
+OUTPUT_FILE = "manifest.json"
 IMAGES_FOLDER = "."  # Chemin local vers tes images
 
 # === MANIFEST IIIF v2.0 ===
