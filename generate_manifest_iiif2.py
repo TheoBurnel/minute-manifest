@@ -3,14 +3,14 @@ import json
 from PIL import Image
 
 # === CONFIGURATION ===
-BASE_URL = "https://github.com/TheoBurnel/minute-manifest"  # URL de base pour les images (à adapter)
+BASE_URL = "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main"  # URL de base pour les images (à adapter)
 OUTPUT_FILE = "manifest2.json"
 IMAGES_FOLDER = "."  # Chemin local vers tes images
 
 # === MANIFEST IIIF v2.0 ===
 manifest = {
     "@context": "http://iiif.io/api/presentation/2/context.json",
-    "@id": f"{BASE_URL}/manifest",
+    "@id": f"{BASE_URL}/manifest.json",
     "@type": "sc:Manifest",
     "label": "Mon Manuscrit",
     "sequences": [{
