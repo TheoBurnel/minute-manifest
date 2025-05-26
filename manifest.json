@@ -35,15 +35,7 @@
               },
               "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/1"
             }
-          ],
-          "otherContent": [
-            {
-              "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0023.xml",
-              "label": "Fichier ALTO",
-              "format": "application/xml"
-            }
-          ],
-          "description": "N^o DU JUGEMENT: 6 du Code de justice militaire...) ... (texte tronqué pour l'exemple)"
+          ]
         },
         {
           "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/2",
@@ -72,15 +64,7 @@
               },
               "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/2"
             }
-          ],
-          "otherContent": [
-            {
-              "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0024.xml",
-              "label": "Fichier ALTO",
-              "format": "application/xml"
-            }
-          ],
-          "description": "militaire, du Code d'instruction criminelle ... (texte tronqué pour l'exemple)"
+          ]
         },
         {
           "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/3",
@@ -109,15 +93,7 @@
               },
               "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/3"
             }
-          ],
-          "otherContent": [
-            {
-              "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0025.xml",
-              "label": "Fichier ALTO",
-              "format": "application/xml"
-            }
-          ],
-          "description": "Les voix recueillies séparément ... (texte tronqué pour l'exemple)"
+          ]
         },
         {
           "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/4",
@@ -146,15 +122,7 @@
               },
               "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/4"
             }
-          ],
-          "otherContent": [
-            {
-              "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0026.xml",
-              "label": "Fichier ALTO",
-              "format": "application/xml"
-            }
-          ],
-          "description": "Delapore devant la garde rassemblée ... (texte tronqué pour l'exemple)"
+          ]
         }
       ]
     }
