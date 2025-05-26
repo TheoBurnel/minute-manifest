@@ -6,19 +6,20 @@
   "sequences": [
     {
       "@type": "sc:Sequence",
-      "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/sequence/normal",
+      "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json/sequence/normal",
       "canvases": [
         {
           "@type": "sc:Canvas",
-          "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/1",
+          "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json/canvas/1",
           "label": "Page 1",
           "height": 9301,
           "width": 5778,
           "images": [
             {
               "@type": "oa:Annotation",
+              "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json/annotation/1",
               "motivation": "sc:painting",
-              "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/1",
+              "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json/canvas/1",
               "resource": {
                 "@type": "dctypes:Image",
                 "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/files/11_J_184_0023.jpg",
@@ -36,15 +37,16 @@
         },
         {
           "@type": "sc:Canvas",
-          "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/2",
+          "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json/canvas/2",
           "label": "Page 2",
           "height": 9397,
           "width": 6410,
           "images": [
             {
               "@type": "oa:Annotation",
+              "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json/annotation/2",
               "motivation": "sc:painting",
-              "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/2",
+              "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json/canvas/2",
               "resource": {
                 "@type": "dctypes:Image",
                 "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/files/11_J_184_0024.jpg",
@@ -62,15 +64,16 @@
         },
         {
           "@type": "sc:Canvas",
-          "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/3",
+          "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json/canvas/3",
           "label": "Page 3",
           "height": 9301,
           "width": 5778,
           "images": [
             {
               "@type": "oa:Annotation",
+              "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json/annotation/3",
               "motivation": "sc:painting",
-              "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/3",
+              "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json/canvas/3",
               "resource": {
                 "@type": "dctypes:Image",
                 "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/files/11_J_184_0025.jpg",
@@ -88,15 +91,16 @@
         },
         {
           "@type": "sc:Canvas",
-          "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/4",
+          "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json/canvas/4",
           "label": "Page 4",
           "height": 9397,
           "width": 6423,
           "images": [
             {
               "@type": "oa:Annotation",
+              "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json/annotation/4",
               "motivation": "sc:painting",
-              "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/canvas/4",
+              "on": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/manifest.json/canvas/4",
               "resource": {
                 "@type": "dctypes:Image",
                 "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/files/11_J_184_0026.jpg",

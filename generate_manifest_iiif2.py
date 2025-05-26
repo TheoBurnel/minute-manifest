@@ -3,24 +3,26 @@ import json
 from PIL import Image
 
 # === CONFIGURATION ===
-BASE_URL = "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main"  # URL de base pour les images (à adapter)
+BASE_URL = "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main"  # URL de base
 OUTPUT_FILE = "manifest.json"
-IMAGES_FOLDER = "."  # Chemin local vers tes images
+IMAGES_FOLDER = "."  # Dossier local contenant les .jpg
 
 # === MANIFEST IIIF v2.0 ===
+manifest_url = f"{BASE_URL}/manifest.json"
+
 manifest = {
     "@context": "http://iiif.io/api/presentation/2/context.json",
-    "@id": f"{BASE_URL}/manifest.json",
+    "@id": manifest_url,
     "@type": "sc:Manifest",
     "label": "Mon Manuscrit",
     "sequences": [{
         "@type": "sc:Sequence",
-        "@id": f"{BASE_URL}/sequence/normal",
+        "@id": f"{manifest_url}/sequence/normal",
         "canvases": []
     }]
 }
 
-# === Génération des canvas à partir des images ===
+# === Génération des canvases ===
 images = sorted([f for f in os.listdir(IMAGES_FOLDER) if f.lower().endswith(".jpg")])
 
 for idx, filename in enumerate(images):
@@ -28,9 +30,9 @@ for idx, filename in enumerate(images):
     with Image.open(image_path) as img:
         width, height = img.size
 
-    canvas_id = f"{BASE_URL}/canvas/{idx+1}"
-    image_id = f"{BASE_URL}/image/{idx+1}"
-    image_url = f"{BASE_URL}/files/{filename}"
+    canvas_id = f"{manifest_url}/canvas/{idx+1}"
+    image_id = f"{manifest_url}/image/{idx+1}"  # Pour l'annotation
+    image_url = f"{BASE_URL}/files/{filename}"  # Image réelle
 
     canvas = {
         "@type": "sc:Canvas",
@@ -40,6 +42,7 @@ for idx, filename in enumerate(images):
         "width": width,
         "images": [{
             "@type": "oa:Annotation",
+            "@id": f"{manifest_url}/annotation/{idx+1}",
             "motivation": "sc:painting",
             "on": canvas_id,
             "resource": {
@@ -50,7 +53,7 @@ for idx, filename in enumerate(images):
                 "width": width,
                 "service": {
                     "@context": "http://iiif.io/api/image/2/context.json",
-                    "@id": image_url.rsplit('.', 1)[0],  # URL sans .jpg
+                    "@id": image_url.rsplit('.', 1)[0],
                     "profile": "http://iiif.io/api/image/2/level1.json"
                 }
             }
@@ -59,7 +62,7 @@ for idx, filename in enumerate(images):
 
     manifest["sequences"][0]["canvases"].append(canvas)
 
-# === Écriture du fichier JSON ===
+# === Écriture du manifeste ===
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     json.dump(manifest, f, indent=2, ensure_ascii=False)
 
