@@ -18,7 +18,7 @@
             {
               "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0023.xml",
               "format": "application/xml",
-              "label": "Fichier ALTO"
+              "label": "OCR text"
             }
           ],
           "images": [
@@ -47,7 +47,7 @@
             {
               "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0024.xml",
               "format": "application/xml",
-              "label": "Fichier ALTO"
+              "label": "OCR text"
             }
           ],
           "images": [
@@ -76,7 +76,7 @@
             {
               "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0025.xml",
               "format": "application/xml",
-              "label": "Fichier ALTO"
+              "label": "OCR text"
             }
           ],
           "images": [
@@ -105,7 +105,7 @@
             {
               "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0026.xml",
               "format": "application/xml",
-              "label": "Fichier ALTO"
+              "label": "OCR text"
             }
           ],
           "images": [
