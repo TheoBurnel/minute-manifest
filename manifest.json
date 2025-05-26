@@ -18,7 +18,8 @@
             {
               "@id": "https://raw.githubusercontent.com/TheoBurnel/minute-manifest/main/11_J_184_0023.xml",
               "format": "application/xml",
-              "label": "OCR text"
+              "label": "OCR text",
+              "profile": "http://iiif.io/api/image/2/level2.json"
             }
           ],
           "images": [
